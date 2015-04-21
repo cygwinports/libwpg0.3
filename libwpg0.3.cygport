@@ -1,0 +1,25 @@
+NAME="libwpg0.3"
+VERSION=0.3.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="WordPerfect Graphics library"
+DESCRIPTION="libwpg is a cross-platform C++ library to read and parse graphics
+in WPG (WordPerfect Graphics) format."
+HOMEPAGE="http://libwpg.sourceforge.net/"
+SRC_URI="mirror://sourceforge/libwpg/libwpg-${VERSION}.tar.xz"
+SRC_DIR="libwpg-${VERSION}"
+PATCH_URI="
+	0.3.0-version-info.patch
+	0.2.1-vpath.patch
+"
+
+PKG_NAMES="libwpg-tools ${NAME}_3 ${NAME}-devel ${NAME}-doc"
+libwpg_tools_CATEGORY="Graphics"
+libwpg_tools_OBSOLETES="libwpg-bin"
+libwpg_tools_SUMMARY=${SUMMARY/library/utilities}
+libwpg_tools_CONTENTS="usr/bin/wpg*"
+libwpg0_3_3_CONTENTS="--exclude=html usr/bin/*-0.3-3.dll usr/share/doc/"
+libwpg0_3_devel_CONTENTS="usr/include/ usr/lib/"
+libwpg0_3_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+KEEP_LA_FILES="none"

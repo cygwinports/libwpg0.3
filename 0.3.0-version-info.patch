@@ -1,0 +1,8 @@
+--- origsrc/libwpg-0.3.0/src/lib/Makefile.am	2014-03-29 05:19:42.000000000 -0500
++++ src/libwpg-0.3.0/src/lib/Makefile.am	2015-04-21 14:49:57.820135200 -0500
+@@ -1,4 +1,4 @@
+-if PLATFORM_WIN32
++if OS_WIN32
+ version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -avoid-version
+ else
+ version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
